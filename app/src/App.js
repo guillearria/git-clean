@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Button } from "antd";
+import { Layout, Button, Spin } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 
 import "./App.css";
@@ -50,7 +50,7 @@ function App() {
   if (status === "loading") {
     content = (
       <Content>
-        <h1>Loading....</h1>
+        <Spin size="large" />
       </Content>
     );
   } else if (token && status === "authorized") {
