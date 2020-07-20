@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout, Button } from "antd";
 import { GithubFilled, GithubOutlined } from "@ant-design/icons";
 
@@ -9,7 +9,23 @@ const CLIENT_ID = "7fe013c90e0777329367";
 const REDIRECT_URI = "http://localhost:3000/";
 
 function App() {
+  const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    const code =
+      window.location.href.match(/?code=(.*)/) &&
+      window.location.href.match(/?code=(.*)/)[1];
+    if (code) {
+      setLoading(true);
+      fetch(`http://git-clean.herokuapp.com/authenticate/${code}`)
+        .then((res) => res.json())
+        .then((token) => {
+          setToken(token);
+          setLoading(false);
+        });
+    }
+  }, []);
 
   return (
     <Layout className="App">
