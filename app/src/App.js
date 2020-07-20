@@ -4,7 +4,9 @@ import { GithubFilled, GithubOutlined } from "@ant-design/icons";
 
 import "./App.css";
 
-const { Header, Footer, Content } = Layout;
+import Header from "./components/Header";
+
+const { Footer, Content } = Layout;
 const CLIENT_ID = "7fe013c90e0777329367";
 const REDIRECT_URI = "http://localhost:3000/";
 
@@ -61,9 +63,7 @@ function App() {
 
   return (
     <Layout className="App">
-      <Header className="App-header">
-        <h1>GitClean</h1>
-      </Header>
+      <Header title="GitClean" />
       {content}
       <Footer className="App-footer">
         <a href="https://github.com/arriadevoe/git-clean">
