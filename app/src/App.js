@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import LandingScreen from './screens/LandingScreen';
+import Dashboard from './screens/Dashboard';
 
 const { Content } = Layout;
 
@@ -40,12 +41,7 @@ function App() {
       </Content>
     );
   } else if (token && status === "authorized") {
-    content = (
-      <Content>
-        <h1>GitHub access authorized.</h1>
-        <p>Token: {token}</p>
-      </Content>
-    );
+    content = <Dashboard token={token} />
   }
 
   return (
