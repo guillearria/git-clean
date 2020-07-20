@@ -1,6 +1,6 @@
 @import "~antd/dist/antd.css";
 
-.App {
+.screen {
   text-align: center;
   height: 100vh;
 }
@@ -14,16 +14,6 @@
   width: 20em;
   margin: 1em auto;
   /* margin-bottom: 3em; */
-}
-
-.App-footer {
-  background: skyblue;
-}
-
-.App-footer a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: black;
 }
 
 Button {

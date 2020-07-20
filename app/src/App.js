@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Button } from "antd";
-import { GithubFilled, GithubOutlined } from "@ant-design/icons";
+import { GithubOutlined } from "@ant-design/icons";
 
 import "./App.css";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-const { Footer, Content } = Layout;
+const { Content } = Layout;
 const CLIENT_ID = "7fe013c90e0777329367";
 const REDIRECT_URI = "http://localhost:3000/";
 
@@ -62,14 +63,10 @@ function App() {
   }
 
   return (
-    <Layout className="App">
+    <Layout className="screen">
       <Header title="GitClean" />
       {content}
-      <Footer className="App-footer">
-        <a href="https://github.com/arriadevoe/git-clean">
-          <GithubFilled />
-        </a>
-      </Footer>
+      <Footer />
     </Layout>
   );
 }
