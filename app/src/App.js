@@ -14,14 +14,14 @@ function App() {
 
   useEffect(() => {
     const code =
-      window.location.href.match(/?code=(.*)/) &&
-      window.location.href.match(/?code=(.*)/)[1];
+      window.location.href.match(/code=(.*)/) &&
+      window.location.href.match(/code=(.*)/)[1];
     if (code) {
-      setStatus("loading"); // ??
+      setStatus("loading");
       fetch(`http://git-clean.herokuapp.com/authenticate/${code}`)
         .then((res) => res.json())
-        .then((token) => {
-          setToken(token);
+        .then((res) => {
+          setToken(res.token);
           setStatus("authorized");
         });
     }
@@ -44,7 +44,13 @@ function App() {
     </Content>
   );
 
-  if (token && status == "authorized") {
+  if (status === "loading") {
+    content = (
+      <Content>
+        <h1>Loading....</h1>
+      </Content>
+    );
+  } else if (token && status === "authorized") {
     content = (
       <Content>
         <h1>GitHub access authorized.</h1>
