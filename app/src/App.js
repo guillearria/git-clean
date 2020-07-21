@@ -6,10 +6,10 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import LandingScreen from './screens/LandingScreen';
-import Dashboard from './screens/Dashboard';
+import LandingScreen from "./screens/LandingScreen";
+import Dashboard from "./screens/Dashboard";
 
-const { Content } = Layout;
+// const { Content } = Layout;
 
 function App() {
   const [status, setStatus] = useState("unauthorized");
@@ -30,18 +30,16 @@ function App() {
     }
   }, []);
 
-  let content = (
-    <LandingScreen />
-  );
+  let content = <LandingScreen />;
 
   if (status === "loading") {
     content = (
-      <Content>
+      <Layout>
         <Spin size="large" />
-      </Content>
+      </Layout>
     );
   } else if (token && status === "authorized") {
-    content = <Dashboard token={token} />
+    content = <Dashboard token={token} />;
   }
 
   return (

@@ -1,0 +1,15 @@
+.side-menu {
+  overflow: "auto";
+  height: "100vh";
+  position: "fixed";
+  left: 0;
+}
+
+.side-menu-user img {
+  width: 50px;
+}
+
+.left-content {
+  margin: "24px 16px 0";
+  overflow: "initial";
+}
