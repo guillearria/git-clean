@@ -31,7 +31,7 @@ function LandingScreen(props) {
   }, []);
 
   const onCollapse = coll => {
-    setCollapsed({ coll });
+    setCollapsed(coll);
   };
 
   return (
