@@ -4,6 +4,9 @@ import { GithubOutlined } from "@ant-design/icons";
 
 import "./LandingScreen.css";
 
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 const { Content } = Layout;
 const CLIENT_ID = "7fe013c90e0777329367";
 const REDIRECT_URI = "http://localhost:3000/";
@@ -11,6 +14,7 @@ const REDIRECT_URI = "http://localhost:3000/";
 function LandingScreen() {
   return (
     <Layout>
+      <Header title="GitClean" />
       <Content className="content">
         <h2>Simple GitHub organization. Powerful results.</h2>
         <p>
@@ -25,6 +29,7 @@ function LandingScreen() {
           </Button>
         </a>
       </Content>
+      <Footer />
     </Layout>
   );
 }

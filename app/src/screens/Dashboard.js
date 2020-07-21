@@ -5,7 +5,10 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 import "./Dashboard.css";
 
-const { Header, Footer, Content, Sider } = Layout;
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+
+const { Content, Sider } = Layout;
 
 function LandingScreen(props) {
   const [userData, setUserData] = useState({});
@@ -51,7 +54,7 @@ function LandingScreen(props) {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
+        <Header title="GitClean" />
         <Content className="site-layout-content" style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <div style={{ padding: 24, textAlign: 'center' }}>
             <h2>Your repos:</h2>
@@ -62,7 +65,7 @@ function LandingScreen(props) {
             </ul>
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer />
       </Layout>
     </Layout>
   );

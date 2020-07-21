@@ -3,9 +3,6 @@ import { Layout, Spin } from "antd";
 
 import "./App.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
 import LandingScreen from "./screens/LandingScreen";
 import Dashboard from "./screens/Dashboard";
 
@@ -42,13 +39,7 @@ function App() {
     content = <Dashboard token={token} />;
   }
 
-  return (
-    <Layout className="screen">
-      <Header title="GitClean" />
-      {content}
-      <Footer />
-    </Layout>
-  );
+  return <Layout className="screen">{content}</Layout>;
 }
 
 export default App;
